@@ -15,7 +15,10 @@ class CgiProgram extends \Ske\System\CgiProgram
         switch($path = $url->path)
         {
             case $base . '/':
-                exit('Welcome to CGI home !');
+                ob_start();
+                require_once $this->root . '/res/home.php';
+                $content = ob_get_clean();
+                exit($content);
                 break;
 
             default:
