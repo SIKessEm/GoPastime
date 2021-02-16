@@ -23,6 +23,11 @@ abstract class Program
 
     protected string $root;
 
+    public function root(): string
+    {
+        return $this->root;
+    }
+
     protected array $options;
 
     abstract public function main(): void;
