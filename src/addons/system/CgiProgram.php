@@ -19,7 +19,8 @@ class CgiProgram extends \Ske\System\CgiProgram
                 break;
 
             default:
-                exit('Document not found (' . $path . ') !');
+                echo 'Document not found at "' . $path . '".';
+                exit(1);
                 break;
         }
     }

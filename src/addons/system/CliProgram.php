@@ -13,7 +13,7 @@ class CliProgram extends \Ske\System\CliProgram
                     break;
 
                 default:
-                    fputs(STDERR, 'Invalid command given : "' . $cmd . '"');
+                    fputs(STDERR, 'Command "' . $cmd . '" is invalid');
                     exit(1);
                     break;
             }
