@@ -1,3 +1,10 @@
 <?php
-$program = require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'cmd.php';
+use System\CliProgram as Program;
+
+$root = dirname(__DIR__);
+
+$sys =  require_once $root . DIRECTORY_SEPARATOR . 'sys.php';
+
+$program = new Program($root, $sys);
+
 $program->main($argc, $argv);
