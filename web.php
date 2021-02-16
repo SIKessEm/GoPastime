@@ -1,4 +1,4 @@
-<?php namespace System;
+<?php
 use System\CgiProgram as Program;
 
 require_once __DIR__ . '/src/vendor/autoload.php';

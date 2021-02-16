@@ -1,4 +1,4 @@
-<?php namespace System;
+<?php
 use System\CliProgram as Program;
 
 require_once __DIR__ . '/src/vendor/autoload.php';
