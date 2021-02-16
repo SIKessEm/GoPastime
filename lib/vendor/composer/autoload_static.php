@@ -24,7 +24,7 @@ class ComposerStaticInit668a1aa5a6d86e3742d530f0be57fe5e
         ),
         'Ske\\System\\' => 
         array (
-            0 => __DIR__ . '/../../..' . '/lib/addons/sikessem/system',
+            0 => __DIR__ . '/..' . '/sikessem/system',
         ),
         'Ske\\Parsing\\Url\\' => 
         array (

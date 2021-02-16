@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ec6a683209dd8a0bfb97dd1355093fc919a5c880',
+    'reference' => 'a26231e493bfb3e6b47bc733515243fcbd9d253b',
     'name' => 'sikessem/minichat',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ec6a683209dd8a0bfb97dd1355093fc919a5c880',
+      'reference' => 'a26231e493bfb3e6b47bc733515243fcbd9d253b',
     ),
     'sikessem/parsing-path' => 
     array (
