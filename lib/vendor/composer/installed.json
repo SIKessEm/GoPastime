@@ -1,0 +1,157 @@
+{
+    "packages": [
+        {
+            "name": "sikessem/parsing-path",
+            "version": "dev-development",
+            "version_normalized": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SKE-SIKessEm/PathParsing.php.git",
+                "reference": "eea73f9e85796f6d4b5581261551ce966093e7ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SKE-SIKessEm/PathParsing.php/zipball/eea73f9e85796f6d4b5581261551ce966093e7ab",
+                "reference": "eea73f9e85796f6d4b5581261551ce966093e7ab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "time": "2021-02-15T16:57:20+00:00",
+            "default-branch": true,
+            "type": "project",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "Ske\\Parsing\\Path\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SIGUI Kessé Emmanuel",
+                    "email": "sikessem@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Path parsing for PHP",
+            "keywords": [
+                "path-parser",
+                "path-parsing",
+                "sikessem",
+                "ske"
+            ],
+            "support": {
+                "issues": "https://github.com/SKE-SIKessEm/PathParsing.php/issues",
+                "source": "https://github.com/SKE-SIKessEm/PathParsing.php/tree/development"
+            },
+            "install-path": "../sikessem/parsing-path"
+        },
+        {
+            "name": "sikessem/parsing-query",
+            "version": "dev-development",
+            "version_normalized": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SKE-SIKessEm/QueryParsing.php.git",
+                "reference": "c9657e05e739385697f786c4f7096ea4874836bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SKE-SIKessEm/QueryParsing.php/zipball/c9657e05e739385697f786c4f7096ea4874836bc",
+                "reference": "c9657e05e739385697f786c4f7096ea4874836bc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "time": "2021-02-15T14:35:48+00:00",
+            "default-branch": true,
+            "type": "project",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "Ske\\Parsing\\Query\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SIGUI Kessé Emmanuel",
+                    "email": "sikessem@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Query Parsing for PHP",
+            "keywords": [
+                "query-parsing",
+                "sikessem",
+                "ske"
+            ],
+            "support": {
+                "issues": "https://github.com/SKE-SIKessEm/QueryParsing.php/issues",
+                "source": "https://github.com/SKE-SIKessEm/QueryParsing.php/tree/development"
+            },
+            "install-path": "../sikessem/parsing-query"
+        },
+        {
+            "name": "sikessem/parsing-url",
+            "version": "dev-development",
+            "version_normalized": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SKE-SIKessEm/URLParsing.php.git",
+                "reference": "0f3c16273df74a162ad3285243fe28e10125886b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SKE-SIKessEm/URLParsing.php/zipball/0f3c16273df74a162ad3285243fe28e10125886b",
+                "reference": "0f3c16273df74a162ad3285243fe28e10125886b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "time": "2021-02-15T15:54:34+00:00",
+            "default-branch": true,
+            "type": "project",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "Ske\\Parsing\\Url\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SIGUI Kessé Emmanuel",
+                    "email": "sikessem@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "URL Parsing for PHP",
+            "keywords": [
+                "sikessem",
+                "ske",
+                "url-parsing"
+            ],
+            "support": {
+                "issues": "https://github.com/SKE-SIKessEm/URLParsing.php/issues",
+                "source": "https://github.com/SKE-SIKessEm/URLParsing.php/tree/development"
+            },
+            "install-path": "../sikessem/parsing-url"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
