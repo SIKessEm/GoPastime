@@ -5,7 +5,7 @@ use Ske\Parsing\{
     Query\QueryParsable
 };
 
-class CgiProgram extends \Ske\System\CgiProgram
+class CgiProgram extends \Ske\Cgi\Program
 {
     public function main(string $base = ''): void
     {

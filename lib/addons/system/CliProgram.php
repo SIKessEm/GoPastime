@@ -1,6 +1,6 @@
 <?php namespace System;
 
-class CliProgram extends \Ske\System\CliProgram
+class CliProgram extends \Ske\Cli\Program
 {
     public function main(int $argc = 0, array $argv = []): void
     {

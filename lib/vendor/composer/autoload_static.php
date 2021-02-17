@@ -10,10 +10,12 @@ class ComposerStaticInit668a1aa5a6d86e3742d530f0be57fe5e
         'S' => 
         array (
             'System\\' => 7,
-            'Ske\\System\\' => 11,
             'Ske\\Parsing\\Url\\' => 16,
             'Ske\\Parsing\\Query\\' => 18,
             'Ske\\Parsing\\Path\\' => 17,
+            'Ske\\Cli\\' => 8,
+            'Ske\\Cgi\\' => 8,
+            'Ske\\' => 4,
         ),
     );
 
@@ -21,10 +23,6 @@ class ComposerStaticInit668a1aa5a6d86e3742d530f0be57fe5e
         'System\\' => 
         array (
             0 => __DIR__ . '/../../..' . '/lib/addons/system',
-        ),
-        'Ske\\System\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/sikessem/system',
         ),
         'Ske\\Parsing\\Url\\' => 
         array (
@@ -37,6 +35,18 @@ class ComposerStaticInit668a1aa5a6d86e3742d530f0be57fe5e
         'Ske\\Parsing\\Path\\' => 
         array (
             0 => __DIR__ . '/..' . '/sikessem/parsing-path',
+        ),
+        'Ske\\Cli\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sikessem/cli-app',
+        ),
+        'Ske\\Cgi\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sikessem/cgi-app',
+        ),
+        'Ske\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sikessem/framework',
         ),
     );
 

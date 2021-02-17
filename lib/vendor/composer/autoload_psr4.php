@@ -7,8 +7,10 @@ $baseDir = dirname(dirname($vendorDir));
 
 return array(
     'System\\' => array($baseDir . '/lib/addons/system'),
-    'Ske\\System\\' => array($vendorDir . '/sikessem/system'),
     'Ske\\Parsing\\Url\\' => array($vendorDir . '/sikessem/parsing-url'),
     'Ske\\Parsing\\Query\\' => array($vendorDir . '/sikessem/parsing-query'),
     'Ske\\Parsing\\Path\\' => array($vendorDir . '/sikessem/parsing-path'),
+    'Ske\\Cli\\' => array($vendorDir . '/sikessem/cli-app'),
+    'Ske\\Cgi\\' => array($vendorDir . '/sikessem/cgi-app'),
+    'Ske\\' => array($vendorDir . '/sikessem/framework'),
 );
