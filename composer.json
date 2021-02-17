@@ -26,6 +26,7 @@
         }
     },
     "config": {
+        "bin-dir": "bin",
         "vendor-dir": "lib/vendor",
         "preferred-install": "dist",
         "sort-packages": true
