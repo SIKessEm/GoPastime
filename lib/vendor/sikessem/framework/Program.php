@@ -37,7 +37,7 @@ abstract class Program
             throw new \InvalidArgumentException('No such directory "' . $root . '"', self::INVALID_ROOT_ERROR);
             
         $this->root = $root;
-        $this->options = $options;
+        $this->sys = new System($options);
     }
 
     /**
@@ -46,6 +46,8 @@ abstract class Program
     protected string $root;
 
     /**
+     * Get the program root directory 
+     *
      * @return string The program root directory
      */
     public function root(): string
@@ -54,9 +56,19 @@ abstract class Program
     }
 
     /**
-     * @var array $options System options list
+     * @var namespace\System $sys The program system
      */
-    protected array $options;
+    protected System $sys;
+
+    /**
+     * Get the program system
+     * 
+     * @var namespace\System $sys The program system
+     */
+    public function system(): System
+    {
+        return $this->sys;
+    }
 
     /**
      * The framework program handler
@@ -64,23 +76,4 @@ abstract class Program
      * @return void
      */
     abstract public function main(): void;
-
-    /**
-     * Call the system options
-     * 
-     * @param string $args The system option index
-     * @return mixed The option index value
-     */
-    public function __invoke(...$args)
-    {
-        $data = [];
-
-        foreach($args as $index)
-            $data[$index] = $this->options[$index] ?? null;
-
-        if(count($data) === 1)
-            $data = $data[array_key_first($data)];
-        
-        return $data;
-    }
 }

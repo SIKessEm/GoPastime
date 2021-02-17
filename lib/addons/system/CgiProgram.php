@@ -16,7 +16,7 @@ class CgiProgram extends \Ske\Cgi\Program
         {
             case $base . '/':
                 ob_start();
-                $sys = $this;
+                $sys = $this->system();
                 require_once $this->root . '/res/home.php';
                 $content = ob_get_clean();
                 exit($content);
