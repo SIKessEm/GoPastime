@@ -15,7 +15,13 @@ class System
      */
     public function __construct(array $options = [])
     {
+        $this->configure($options);
+    }
+
+    protected function configure(array $options): self
+    {
         $this->options = $options;
+        return $this;
     }
 
     /**
