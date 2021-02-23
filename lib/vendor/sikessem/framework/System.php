@@ -13,9 +13,34 @@ class System
      * 
      * @param array $options System options list
      */
-    public function __construct(array $options = [])
+    public function __construct(string $root, array $options = [])
     {
+        if(empty($root))
+            throw new \InvalidArgumentException('Empty directory given', self::INVALID_ROOT_ERROR);
+            
+        if(in_array($root, self::INVALID_ROOT_VALUES))
+            throw new \InvalidArgumentException('Cannot use "' . $root . '" as directory', self::INVALID_ROOT_ERROR);
+        
+        if(!is_dir($root))
+            throw new \InvalidArgumentException('No such directory "' . $root . '"', self::INVALID_ROOT_ERROR);
+            
+        $this->root = $root;
         $this->configure($options);
+    }
+
+    /**
+     * @var string The program root directory
+     */
+    protected string $root;
+
+    /**
+     * Get the program root directory 
+     *
+     * @return string The program root directory
+     */
+    public function root(): string
+    {
+        return $this->root;
     }
 
     protected function configure(array $options): self
