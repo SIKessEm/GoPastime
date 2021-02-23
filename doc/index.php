@@ -1,5 +1,5 @@
 <?php
-use System\CgiProgram as Program;
+use App\CgiProgram as Program;
 
 $base = '';
 

@@ -9,6 +9,16 @@
 class System
 {
     /**
+     * @var array The list of the invalid root values
+     */
+    public const INVALID_ROOT_VALUES = ['.', '..'];
+
+    /**
+     * @var int The invalid root error type
+     */
+    public const INVALID_ROOT_ERROR = 0x01;
+
+    /**
      * Create a new system
      * 
      * @param array $options System options list

@@ -1,5 +1,5 @@
 <?php
-use System\CliProgram as Program;
+use App\CliProgram as Program;
 
 $root = dirname(__DIR__);
 
