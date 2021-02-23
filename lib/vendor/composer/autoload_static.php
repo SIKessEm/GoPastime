@@ -9,7 +9,6 @@ class ComposerStaticInit668a1aa5a6d86e3742d530f0be57fe5e
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'System\\' => 7,
             'Ske\\Parsing\\Url\\' => 16,
             'Ske\\Parsing\\Query\\' => 18,
             'Ske\\Parsing\\Path\\' => 17,
@@ -17,13 +16,13 @@ class ComposerStaticInit668a1aa5a6d86e3742d530f0be57fe5e
             'Ske\\Cgi\\' => 8,
             'Ske\\' => 4,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'System\\' => 
-        array (
-            0 => __DIR__ . '/../../..' . '/lib/addons/system',
-        ),
         'Ske\\Parsing\\Url\\' => 
         array (
             0 => __DIR__ . '/..' . '/sikessem/parsing-url',
@@ -47,6 +46,10 @@ class ComposerStaticInit668a1aa5a6d86e3742d530f0be57fe5e
         'Ske\\' => 
         array (
             0 => __DIR__ . '/..' . '/sikessem/framework',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../../..' . '/src',
         ),
     );
 

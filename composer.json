@@ -22,7 +22,7 @@
             "Ske\\": "lib/vendor/sikessem/framework/",
             "Ske\\Cgi\\": "lib/vendor/sikessem/cgi-app/",
             "Ske\\Cli\\": "lib/vendor/sikessem/cli-app/",
-            "System\\": "lib/addons/system/"
+            "App\\": "src/"
         }
     },
     "config": {

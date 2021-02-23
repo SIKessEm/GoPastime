@@ -6,20 +6,11 @@
     'aliases' => 
     array (
     ),
-    'reference' => '64b4a6b2985c371fc80a80e58abdbb768d76569a',
-    'name' => 'sikessem/minichat',
+    'reference' => 'bacf67f817acd29e10af2cb7cf82a0c44d400a0f',
+    'name' => 'sikessem/zwuwz',
   ),
   'versions' => 
   array (
-    'sikessem/minichat' => 
-    array (
-      'pretty_version' => 'dev-development',
-      'version' => 'dev-development',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '64b4a6b2985c371fc80a80e58abdbb768d76569a',
-    ),
     'sikessem/parsing-path' => 
     array (
       'pretty_version' => 'dev-development',
@@ -28,7 +19,7 @@
       array (
         0 => '9999999-dev',
       ),
-      'reference' => 'eea73f9e85796f6d4b5581261551ce966093e7ab',
+      'reference' => '1fe0ff32d7c61292675411d60321c69acab77489',
     ),
     'sikessem/parsing-query' => 
     array (
@@ -38,7 +29,7 @@
       array (
         0 => '9999999-dev',
       ),
-      'reference' => 'c9657e05e739385697f786c4f7096ea4874836bc',
+      'reference' => '3025bc4989edcce118e86a363ed40a65a026830f',
     ),
     'sikessem/parsing-url' => 
     array (
@@ -48,7 +39,16 @@
       array (
         0 => '9999999-dev',
       ),
-      'reference' => '0f3c16273df74a162ad3285243fe28e10125886b',
+      'reference' => '1ce81d4717b2225db2919ac352f3f8616ab84f7b',
+    ),
+    'sikessem/zwuwz' => 
+    array (
+      'pretty_version' => 'dev-development',
+      'version' => 'dev-development',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'bacf67f817acd29e10af2cb7cf82a0c44d400a0f',
     ),
   ),
 );
