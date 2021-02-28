@@ -1,5 +1,5 @@
 {
-    "name": "sikessem/zwuwz",
+    "name": "sikessem/pastime",
     "description": "The world future",
     "type": "project",
     "require": {
@@ -12,7 +12,7 @@
     "authors": [
         {
             "homepage": "https://sikessem.github.io",
-            "name": "SKE-SIKessEm",
+            "name": "SIGUI Kessé Emmanuel",
             "email": "sikessem@gmail.com",
             "role": "Developer"
         }
