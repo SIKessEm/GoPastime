@@ -1,31 +1,12 @@
 <?php
 use Ske\{
-    Res,
-    Src,
-    Tpl
+    Sys,
+    App
 };
 
-$root = dirname(__DIR__) . DIRECTORY_SEPARATOR;
+$dir = dirname(__DIR__) . DIRECTORY_SEPARATOR;
+$opts = require_once $dir . 'sys.php';
 
-$sys = require_once $root . 'sys.php';
-
-switch ($url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))
-{
-    case '/':
-        $module = 'Home';
-        $action = 'index';
-        break;
-    
-    default:
-        $module = 'ErrorDocument';
-        $action = 'error404';
-        break;
-}
-
-$src = new Src($root . 'src');
-$src->getFile($module . '.php');
-
-$module_class = 'App\\' . $module;
-$module_object = new $module_class;
-
-$module_object->$action();
+$sys = new Sys($dir, $opts);
+$app = new App($sys);
+$app->run();

@@ -32,7 +32,9 @@ class Sys
         if(!is_dir($dir))
             throw new \InvalidArgumentException('No such directory "' . $dir . '"', self::INVALID_ROOT_ERROR);
             
+        $dir = realpath($dir) . DIRECTORY_SEPARATOR;
         $this->dir = $dir;
+
         $this->cfg = $cfg;
     }
 
@@ -55,6 +57,29 @@ class Sys
      * @var array $cfg The system configuration options
      */
     protected array $cfg;
+
+    /**
+     * Get a system component
+     */
+    public function __get(string $name)
+    {
+        switch($name)
+        {
+            case 'src':
+                $opt = new Src($this->dir . $this('inc.src_path'));
+                break;
+
+            case 'tpl':
+                $opt = new Tpl($this->dir . $this('inc.tpl_path'));
+                break;
+
+            default:
+                $opt = null;
+                break;
+        }
+
+        return $opt;
+    }
 
     /**
      * Call the system configuration
