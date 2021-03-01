@@ -63,22 +63,30 @@ class Sys
      */
     public function __get(string $name)
     {
+        static $src, $tpl;
+
+        $cfg = $this->cfg;
+
         switch($name)
         {
             case 'src':
-                $opt = new Src($this->dir . $this('inc.src_path'));
-                break;
+                if(!isset($src))
+                {
+                    $src = new Src($this->dir . $cfg['src.dir'], $cfg['src.ns'], array_map('trim', explode(',', $cfg['src.ext'])));
+                    unset($cfg['src.dir']);
+                }
+                return $src;
 
             case 'tpl':
-                $opt = new Tpl($this->dir . $this('inc.tpl_path'));
-                break;
+                if(!isset($tpl))
+                {
+                    $tpl = new Tpl($this->dir . $cfg['tpl.dir']);
+                    unset($this->cfg['tpl.dir']);
+                }
+                return $tpl;
 
-            default:
-                $opt = null;
-                break;
+            default: return null;
         }
-
-        return $opt;
     }
 
     /**
@@ -87,6 +95,7 @@ class Sys
      * @param string $args The system configuration option index
      * @return mixed The system configuration options values
      */
+    /*
     public function __invoke(...$args)
     {
         $cfg = [];
@@ -99,4 +108,5 @@ class Sys
         
         return $cfg;
     }
+    */
 }

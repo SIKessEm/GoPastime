@@ -45,12 +45,6 @@ class App
                 break;
         }
         
-        $src = new Src($this->sys->dir() . 'src');
-        $src->getFile($module . '.php');
-        
-        $module_class = 'App\\' . $module;
-        $module_object = new $module_class;
-        
-        $module_object->$action();
+        $sys->src->getObject($module)->$action();
     }
 }
