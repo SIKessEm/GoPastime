@@ -22,12 +22,10 @@ switch ($url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))
         break;
 }
 
-$src = new Src($module . '.php', $root . 'src');
-$src->load();
+$src = new Src($root . 'src');
+$src->getFile($module . '.php');
 
 $module_class = 'App\\' . $module;
 $module_object = new $module_class;
 
 $module_object->$action();
-
-$tpl = new Tpl($root . 'tpl', 'jdhjj');

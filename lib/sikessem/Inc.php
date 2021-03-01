@@ -3,29 +3,30 @@
 /**
  * The include class
  */
-abstract class Inc
+class Inc
 {
     /**
      * Create a new include
      * 
-     * @param string $file The include file
      * @param string $path The include path
+     * @param bool $once Include once
      */
-    public function __construct(string $file, string $path)
+    public function __construct(string $path, bool $once)
     {
-        $this->file = $file;
-        $this->setPath($path);
+        $this->php_ini_path = get_include_path();
+        $this->addPath($path);
+        $this->once = $once;
     }
 
     /**
-     * @var string The include file
+     * @var string The PHP ini include path
      */
-    protected string $file;
+    protected string $php_ini_path;
 
     /**
-     * @var string The include path
+     * @var bool Include once
      */
-    protected string $path;
+    protected bool $once;
 
     /**
      * Set the include path
@@ -35,7 +36,7 @@ abstract class Inc
      */
     public function setPath(string $path): self
     {
-        $this->path = $path;
+        set_include_path($path);
         return $this;
     }
 
@@ -47,8 +48,7 @@ abstract class Inc
      */
     public function addPath(string $path): self
     {
-        $this->path .= PATH_SEPARATOR . $path;
-        return $this;
+        return $this->setPath($this->getPath() . PATH_SEPARATOR . $path);
     }
 
     /**
@@ -58,7 +58,7 @@ abstract class Inc
      */
     public function getPath(): string
     {
-        return $this->path;
+        return get_include_path();
     }
 
     /**
@@ -68,14 +68,52 @@ abstract class Inc
      */
     public function hasPath(string $path): bool
     {
-        $paths = explode(PATH_SEPARATOR, $this->path);
-        return in_array($path, $path, true);
+        return in_array($path, explode(PATH_SEPARATOR, $this->getPath()), true);
     }
 
     /**
-     * Load the include file
+     * Include a file
      * 
-     * @return mixed
+     * @param string $file The file to include
+     * @return mixed The value returned by the included file or false
      */
-    abstract public function load();
+    public function getFile(string $file, array $data = [])
+    {
+        foreach(explode(PATH_SEPARATOR, $this->getPath()) as $path)
+        {
+            if(is_file($this->file_path = $path . DIRECTORY_SEPARATOR . $file))
+            {
+                $this->file_data = $data;
+                return $this->get_secure_file();
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @var string The path of the file to include
+     */
+    protected string $file_path;
+
+    /**
+     * @var array The data of the file to include
+     */
+    protected array $file_data;
+
+    /**
+     * Include the secure file
+     * @return mixed The value returned by the included file
+     */
+    protected function get_secure_file()
+    {
+        extract($this->file_data);
+        $return = $this->once ? require_once $this->file_path : require $this->file_path;
+        unset($this->file_data, $this->file_path);
+        return $return;
+    }
+
+    public function __destruct()
+    {
+        set_include_path($this->php_ini_path);
+    }
 }

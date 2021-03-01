@@ -6,15 +6,12 @@
 class Src extends Inc
 {
     /**
-     * Include the source file
+     * Create a new source
      * 
-     * @return mixed The value returned by the included file or false
+     * @param string $path The source path
      */
-    public function load()
+    public function __construct(string $path)
     {
-        foreach(explode(PATH_SEPARATOR, $this->path) as $path)
-            if(is_file($file = $path . DIRECTORY_SEPARATOR . $this->file))
-                return require_once $file;
-        return false;
+        parent::__construct($path, true);
     }
 }

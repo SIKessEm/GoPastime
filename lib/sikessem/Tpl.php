@@ -9,47 +9,10 @@ class Tpl extends Inc
      * Create a new template
      * 
      * @param string $path The template path
-     * @param string $file The template file
-     * @param array $data The template data
      */
-    public function __construct(string $file, string $path, array $data = [])
+    public function __construct(string $path)
     {
-        parent::__construct($file, $path);
-        $this->data = $data;
-    }
-
-    /**
-     * @var array The template data
-     */
-    protected array $data;
-
-    /**
-     * @var string The secure file
-     */
-    protected string $secure_file;
-
-    /**
-     * Include the template file
-     * 
-     * @return mixed The value returned by the included file or false
-     */
-    public function load()
-    {
-        foreach(explode(PATH_SEPARATOR, $this->path) as $path)
-            if(is_file($this->secure_file = $path . DIRECTORY_SEPARATOR . $this->file))
-                return $this->load_secure_file();
-        return false;
-    }
-
-    /**
-     * Include the secure file
-     * 
-     * @return mixed The value returned by the included file
-     */
-    public function load_secure_file()
-    {
-        extract($this->data);
-        return require_once $this->secure_file;
+        parent::__construct($path, false);
     }
 
     /**
