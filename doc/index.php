@@ -1,5 +1,5 @@
 <?php
-use Sikessem\{
+use Ske\{
     Res,
     Src,
     Tpl

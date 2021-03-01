@@ -1,4 +1,4 @@
-<?php namespace Sikessem;
+<?php namespace Ske;
 
 /**
  * The template class

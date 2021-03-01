@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Sikessem\\": "lib/sikessem/"
+            "Ske\\": "lib/sikessem/"
         }
     },
     "config": {
