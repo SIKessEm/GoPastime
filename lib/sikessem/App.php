@@ -22,6 +22,6 @@ class App extends SysComponent
                 break;
         }
         
-        $sys->src->getObject($module)->$action();
+        $sys->src->getObject($module, [$sys])->$action();
     }
 }
