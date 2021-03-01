@@ -3,10 +3,7 @@
     "description": "The world future",
     "type": "project",
     "require": {
-        "php": ">=7.4",
-        "sikessem/parsing-path": "dev-development",
-        "sikessem/parsing-query": "dev-development",
-        "sikessem/parsing-url": "dev-development"
+        "php": ">=7.4"
     },
     "license": "Apache-2.0",
     "authors": [
@@ -19,15 +16,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Ske\\": "lib/vendor/sikessem/framework/",
-            "Ske\\Cgi\\": "lib/vendor/sikessem/cgi-app/",
-            "Ske\\Cli\\": "lib/vendor/sikessem/cli-app/",
-            "App\\": "src/"
+            "Sikessem\\": "lib/sikessem/"
         }
     },
     "config": {
         "bin-dir": "bin",
-        "vendor-dir": "lib/vendor",
+        "vendor-dir": "lib",
         "preferred-install": "dist",
         "sort-packages": true
     },
