@@ -1,6 +1,6 @@
 {
-    "name": "sikessem/pastime",
-    "description": "The world future",
+    "name": "sikessem/gopastime",
+    "description": "Where you will spend your time",
     "type": "project",
     "require": {
         "php": ">=7.4"
