@@ -72,16 +72,16 @@ class Sys
             case 'src':
                 if(!isset($src))
                 {
-                    $src = new Src($this->dir . $cfg['src.dir'], $cfg['src.ns'], array_map('trim', explode(',', $cfg['src.ext'])));
-                    unset($cfg['src.dir']);
+                    $src = new Src($this->dir . $cfg['src.dir'], $cfg['src.ns'], $cfg['src.exts']);
+                    unset($cfg['src.dir'], $cfg['src.exts']);
                 }
                 return $src;
 
             case 'tpl':
                 if(!isset($tpl))
                 {
-                    $tpl = new Tpl($this->dir . $cfg['tpl.dir']);
-                    unset($this->cfg['tpl.dir']);
+                    $tpl = new Tpl($this->dir . $cfg['tpl.dir'], $cfg['tpl.exts']);
+                    unset($this->cfg['tpl.dir'], $cfg['tpl.exts']);
                 }
                 return $tpl;
 

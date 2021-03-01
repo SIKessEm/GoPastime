@@ -10,23 +10,29 @@ class Inc
      * 
      * @param string $path The include path
      * @param bool $once Include once
+     * @param string $exts The file extensions
      */
-    public function __construct(string $path, bool $once)
+    public function __construct(string $path, string $exts, bool $once)
     {
-        $this->php_ini_path = get_include_path();
-        $this->addPath($path);
+        $this->setPath($path);
+        $this->exts = $exts;
         $this->once = $once;
     }
-
-    /**
-     * @var string The PHP ini include path
-     */
-    protected string $php_ini_path;
 
     /**
      * @var bool Include once
      */
     protected bool $once;
+
+    /**
+     * @var string $exts The file extensions
+     */
+    protected string $exts;
+
+    /**
+     * @var string The include path
+     */
+    protected string $path;
 
     /**
      * Set the include path
@@ -36,7 +42,7 @@ class Inc
      */
     public function setPath(string $path): self
     {
-        set_include_path($path);
+        $this->path = $path;
         return $this;
     }
 
@@ -58,7 +64,7 @@ class Inc
      */
     public function getPath(): string
     {
-        return get_include_path();
+        return $this->path;
     }
 
     /**
@@ -81,10 +87,13 @@ class Inc
     {
         foreach(explode(PATH_SEPARATOR, $this->getPath()) as $path)
         {
-            if(is_file($this->file_path = $path . DIRECTORY_SEPARATOR . $file))
+            foreach(array_map('trim', explode(',', $this->exts)) as $ext)
             {
-                $this->file_data = $data;
-                return $this->get_secure_file();
+                if(is_file($this->file_path = $path . DIRECTORY_SEPARATOR . $file . $ext))
+                {
+                    $this->file_data = $data;
+                    return $this->get_secure_file();
+                }
             }
         }
         return false;
@@ -110,10 +119,5 @@ class Inc
         $return = $this->once ? require_once $this->file_path : require $this->file_path;
         unset($this->file_data, $this->file_path);
         return $return;
-    }
-
-    public function __destruct()
-    {
-        set_include_path($this->php_ini_path);
     }
 }
