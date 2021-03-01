@@ -33,9 +33,9 @@ class Src extends Inc
     {
         foreach ($this->exts as $ext)
         {
-            if($this->getFile($name . $ext))
+            if($this->getFile(str_replace(['\\', '/'], DIRECTORY_SEPARATOR, $name) . $ext))
             {
-                if(class_exists($class = $this->ns . '\\' . $name))
+                if(class_exists($class = $this->ns . '\\' . str_replace('/', '\\', $name)))
                 {
                     if(!empty($alias))
                         class_alias($class, $alias, false);
