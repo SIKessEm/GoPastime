@@ -3,31 +3,8 @@
 /**
  * The application class
  */
-class App
+class App extends SysComponent
 {
-    /**
-     * Create a new application
-     * 
-     * @param string $path The application system
-     */
-    public function __construct(Sys $sys)
-    {
-        $this->sys = $sys;
-    }
-
-    /**
-     * @var namespace\Sys The application system
-     */
-    protected Sys $sys;
-
-    /**
-     * @return namespace\Sys The application system
-     */
-    public function sys(): Sys
-    {
-        return $sys;
-    }
-
     public function run()
     {
         $sys = $this->sys;
